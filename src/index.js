@@ -1,14 +1,28 @@
+const sdkInfo = require('../package.json');
 
 export default class GoPlaySDK {
-    version = '0.0.1';
+    version = sdkInfo.version;
+    settings = {
+        gameId: '',
+        currentUser: {}
+    }
 
-    constructor() {
-        console.log(this.version)
+    constructor(gameId = '', currentUser = {}) {
+        this.settings.gameId = gameId;
+        this.settings.currentUser = currentUser;
     }
 
     getVersion()  {
         return this.version;
     }
+
+    setGameID(gameId) {
+        this.settings.gameID = gameId;
+    }
+
+    setCurrentUser(userInfo) {
+        this.settings.currentUser = userInfo;
+    }
 }
 
-window.GoPlaySDK = new GoPlaySDK();
+window.GoPlaySDK = GoPlaySDK;

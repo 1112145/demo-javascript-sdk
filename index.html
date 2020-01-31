@@ -3,6 +3,14 @@
         <script src="sdk.js"></script>
     </head>
     <body>
-        <h1>Go Play SDK</h1>
+        <h1>Go Play SDK Example</h1>
+        <span id="version">Show version</span>
     </body>
+    <script>
+        window.onload = function() {
+            const sdk = new GoPlaySDK()
+            const versionText = document.getElementById('version');
+            versionText.innerHTML = "Version: " + sdk.getVersion();
+        }
+    </script>
 </html>
