@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="sdk.js"></script>
+    </head>
+    <body>
+        <h1>Go Play SDK Example</h1>
+        <span id="version">Show version</span>
+    <script type="text/javascript" src="sdk.js"></script></body>
+    <script>
+        window.onload = function() {
+            const sdk = GoPlaySDK;
+            const versionText = document.getElementById('version');
+            versionText.innerHTML = "Version: " + sdk.getVersion();
+
+            sdk.getCurrentPlayer((user) => {
+                console.log(user);
+            }, (err) => {
+                console.log(err);
+            })
+        }
+    </script>
+</html>

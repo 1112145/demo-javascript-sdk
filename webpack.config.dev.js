@@ -6,16 +6,16 @@ module.exports = {
   mode: 'development',
   output: {
     filename: 'sdk.js',
-    path: path.resolve(__dirname, 'development'),
+    path: path.resolve(__dirname, 'example'),
   },
   devServer: {
-    contentBase: path.join(__dirname, 'development'),
+    contentBase: path.join(__dirname, 'example'),
     compress: true,
     port: 9000
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html')
+      template: path.resolve(__dirname, 'template/example.html')
     })
   ],
   module: {
